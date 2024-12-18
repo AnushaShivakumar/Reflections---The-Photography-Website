@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/navbar.css"> <!-- Navbar styles -->
+  <link rel="stylesheet" href="/login.css"> <!-- Login page styles -->
+        <link rel="stylesheet" href="/footer_prelogin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montez&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <%- include('layouts/main') %>
+
+  <!-- Login Page -->
+  <div class="login-page-container">
+    <div class="content-panel">
+      <h1>Welcome Back!</h1>
+            <!-- Flash Message Section -->
+      <% if (flash.error) { %>
+        <p style="color: red; text-align: center; margin-bottom: 15px;">
+          <%= flash.error %>
+        </p>
+      <% } %>
+      <% if (flash.success) { %>
+        <p style="color: green; text-align: center; margin-bottom: 15px;">
+          <%= flash.success %>
+        </p>
+      <% } %>
+      <form action="/auth/login" method="POST">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <a href="/auth/request-reset" class="forgot-link">Forgot your password? Click here</a>
+      <a href="/auth/register" class="register-link">Don't have an account? Register here</a>
+    </div>
+    
+  </div>
+            <%- include('layouts/footer_prelogin') %>
+</body>
+</html>

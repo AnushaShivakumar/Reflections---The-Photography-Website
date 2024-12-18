@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Lora', serif;
+            background-color: white;
+            color: #aa8851;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 6rem;
+            font-family: "Montez", cursive;font
+            color: #aa8851;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #aa8851;
+            line-height: 1.6;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: white;
+            background-color: #aa8851;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #aa8851;
+            transform: scale(1.05);
+            color: #fdf0f5;
+        }
+
+        /* Cute Image */
+        .cute-image {
+            max-width: 300px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw__photYkVlwV9maRPPWXtKnZX1e4rdMEkA&s" class="cute-image">
+    <h1>404</h1>
+    <p>Oops! The page you are looking for doesn't exist.</p>
+    <p style="font-family: 'Montez', cursive; !important">Maybe the cat stole it 🐾</p>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>

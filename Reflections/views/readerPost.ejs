@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/readerPost.css">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/navbar.css">
+  <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/footer_prelogin.css">
+  <script src="/likesHandler.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <div id="like-notification" class="like-notification hidden"></div>
+  <%- include('./layouts/main', { title: 'Post Details' }) %>
+  <main class="post-container">
+
+    <!-- Uploader Section -->
+    <section class="uploader">
+      <div class="uploader-info">
+        <a href="/user/<%= uploader._id %>">
+          <img 
+            src="<%= uploader.profilePhoto && uploader.profilePhoto.startsWith('http') 
+                   ? uploader.profilePhoto 
+                   : '/profile/photo/' + encodeURIComponent(uploader.profilePhoto || 'default-profile.png') %>" 
+            alt="<%= uploader.name %>" 
+            class="profile-photo"
+          >
+        </a>
+        <a href="/user/<%= uploader._id %>">
+          <h2 style="text-decoration: none !important"><%= uploader.name %></h2>
+        </a>
+      </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+      <img 
+        src="<%= photo.imagePath.startsWith('http') ? photo.imagePath : '/profile/photo/' + encodeURIComponent(photo.imagePath) %>" 
+        alt="<%= photo.title %>" 
+        class="post-image"
+      >
+    </section>
+
+    <!-- Likes Section -->
+      <section class="likes-section">
+  <div 
+    class="like-box <%= user && photo.likes.includes(user._id) ? 'liked' : '' %>"
+    data-photo-id="<%= photo._id %>"
+  >
+    <i class="bi bi-heart-fill"></i>
+    <span>Like <span id="like-count"><%= photo.likes.length %></span>
+  </div>
+</section>
+
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+      <h3>Comments</h3>
+
+      <!-- Display Comments -->
+      <ul class="comments-list">
+<% console.log('Logged-in user:', user); %>
+<% photo.comments.forEach(comment => { %>
+  <li class="comment-item">
+    <strong>
+      <%= comment.user ? comment.user.name : 'Unknown User' %>
+    </strong>: 
+    <%= comment.text %>
+
+    <!-- Debug comment.user._id and user._id -->
+    <% console.log('Comment user ID:', comment.user && comment.user._id); %>
+    <% console.log('Logged-in user ID:', user && user._id); %>
+
+    <!-- Show Delete Button for Comment Owner -->
+    <% if (user && comment.user && comment.user._id && user._id && comment.user._id.toString() === user._id.toString()) { %>
+      <form 
+        method="POST" 
+        action="/comments/<%= comment._id %>?_method=DELETE" 
+        style="display: inline;"
+      >
+        <button type="submit" class="delete-comment-btn">Delete</button>
+      </form>
+    <% } %>
+  </li>
+<% }) %>
+
+</ul>
+
+      <!-- Add Comment Form -->
+      <% if (user) { %>
+        <form method="POST" action="/comments/<%= photo._id %>">
+          <textarea name="text" placeholder="Add a comment..." required></textarea>
+          <button type="submit">Post Comment</button>
+        </form>
+      <% } else { %>
+        <p>Please <a href="/auth/login" >Log in</a> to add a comment.</p>
+      <% } %>
+    </section>
+        
+
+  </main>
+<%- include('layouts/footer_prelogin') %>
+</body>
+</html>

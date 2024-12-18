@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="/navbar.css"> <!-- Corrected path to CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montez&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">Reflections</a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">
+          Explore <span class="dropdown-icon">▼</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tree</a></li>
+          <li><a href="#">Blur</a></li>
+          <li><a href="#">Beautiful</a></li>
+          <li><a href="#">Love</a></li>
+          <li><a href="#">Daylight</a></li>
+          <li><a href="#">Wood</a></li>
+          <li><a href="#">Leaf</a></li>
+          <li><a href="#">Flower</a></li>
+          <li><a href="#">Fall</a></li>
+          <li><a href="#">City</a></li>
+          <li><a href="#">Beach</a></li>
+          <li><a href="#">Rain</a></li>
+          <li><a href="#">Autumn</a></li>
+          <li><a href="#">Mountains</a></li>
+          <li><a href="#">Nature</a></li>
+          <li><a href="#">Desert</a></li>
+          <li><a href="#">Winter</a></li>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Summer</a></li>
+          <li><a href="#">HD Wallpapers</a></li>
+          <li><a href="#">Forest</a></li>
+          <li><a href="#">Spring</a></li>
+        </ul>
+      </li>
+  <!-- About Button -->
+      <li><a href="/about">About</a></li>
+      <!-- Authentication Links -->
+      <% if (user) { %>
+        <li><a href="/auth/profile">Profile</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/register">Register</a></li>
+      <% } %>
+        
+      
+    </ul>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation links for mobile view
+    console.log("User in template:", <%= JSON.stringify(user) %>);
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+  </script>
+</body>
+</html>

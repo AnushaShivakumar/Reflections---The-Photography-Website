@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lora', serif;
+  color: #333;
+}
+
+/* Removed global link styles */
+/* a {
+  text-decoration: none;
+  color: #62445e;
+  font-weight: bold;
+} */
+
+/* Header Styles */
+header {
+  background-color: #aa8851;
+  color: white;
+  padding: 20px;
+  padding-top: 120px;
+  text-align: center;
+  font-family: 'Montez', cursive;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Style specific links in the header */
+header .dashboard-link {
+  color: #aa8851;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+header .dashboard-link:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 100px auto 20px; /* Adjusted top margin */
+  padding: 20px;
+  background: white;
+/*   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);/ */
+  border-radius: 12px;
+}
+
+/* Section Cards */
+.section-card {
+  background: rgba(245, 235, 224, 0.8);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h2 {
+  margin-top: 0;
+  font-family: 'Montez', cursive;
+  color: #aa8851;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: center;
+    font-family: 'Lora', serif;
+}
+
+table thead {
+  background-color: #aa8851;
+  color: white;
+}
+
+table tbody tr:nth-child(even) {
+/*   background-color: #62445E; */
+}
+
+table tbody tr:hover {
+  background-color: rgba(170, 136, 81, 0.2);
+}
+
+/* Buttons */
+button.remove-btn {
+  background-color: #aa8851;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+    font-family: 'Lora', serif;
+  transition: background-color 0.3s ease;
+}
+
+button.remove-btn:hover {
+  background-color: white;
+  color: #aa8851;
+}
+
+/* Admin Badge */
+.admin-badge {
+  font-style: italic;
+  color: #28a745;
+  font-weight: bold;
+}

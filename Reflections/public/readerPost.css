@@ -1,0 +1,196 @@
+/* ReaderPost Page Styles */
+body {
+  font-family: "Montez", cursive;
+}
+
+/* General container for spacing */
+.post-container {
+  max-width: 1000px;
+  margin: 0 auto; /* Center the container */
+  padding: 30px; 
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom:50px;
+  margin-top: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(245, 235, 224, 0.8);
+}
+
+
+/* Uploader Section */
+.uploader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: white;
+  padding: 10px 20px;
+  margin-bottom: 20px; /* Adds spacing below */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.uploader-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.uploader-info h2 {
+  font-size: 2.2rem;
+  color: #aa8851;
+  font-family: "Montez", cursive;
+  text-decoration: none !important; /* Remove underline */
+}
+
+.uploader-info a {
+  text-decoration: none !important; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+}
+
+.uploader-info a h2 {
+  margin: 0; /* Optional: Ensure consistent spacing */
+}
+
+
+/* Image Section */
+.image-section {
+  margin-top: 20px; /* Add spacing below the uploader */
+  text-align: center;
+}
+
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Likes Section */
+.likes-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.like-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.like-box i {
+  color: transparent; /* Empty heart */
+  font-size: 1.8rem;
+  -webkit-text-stroke: 2px #dc3545; /* Red border */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Liked heart style */
+.like-box.liked i {
+  color: #dc3545; /* Solid red heart when liked */
+  -webkit-text-stroke: 0px; /* Remove border */
+}
+
+
+/* Like Notification Box */
+.like-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(245, 235, 224, 0.8); 
+  color: #aa8851; 
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: "Lora", serif;
+  box-shadow: 0 4px 6px ;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Show class to make the notification visible */
+.like-notification.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Comments Section */
+.comments-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section h3 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #aa8851;
+    font-family: "Montez", cursive;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.comment-item {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.comment-item strong {
+  color: #333;
+}
+
+.comments-section textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Lora", serif;
+  resize: none;
+}
+
+.comments-section button {
+  display: inline-block;
+  background-color: #62445E;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Lora", serif;
+}
+
+.comments-section button:hover {
+  background-color: #50364b;
+}

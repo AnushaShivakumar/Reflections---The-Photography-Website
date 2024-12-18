@@ -1,0 +1,91 @@
+/* General Container for the Register Page */
+.register-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://images.pexels.com/photos/1494639/pexels-photo-1494639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  background-size: cover;
+  font-family: "Montez", cursive; /* Consistent font */
+}
+
+/* Main Content Panel */
+.content-panel {
+  background-color: rgba(245, 235, 224, 0.8); /* Semi-transparent background */
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+}
+
+.content-panel h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #aa8851; /* Theme color */
+  margin-bottom: 20px;
+}
+
+.content-panel p {
+  font-size: 1.2em;
+  color: #aa8851;
+  margin-bottom: 30px;
+}
+
+.content-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-panel form label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #aa8851;
+}
+
+.content-panel form input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.content-panel form input:focus {
+  outline: none;
+  border: 2px solid #aa8851; /* Theme color */
+}
+
+.content-panel .btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 20px;
+  background-color: #aa8851;
+  color: white;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+   font-family: "Lora", serif;
+  
+}
+
+.content-panel .btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #aa8851;
+}
+
+.content-panel .login-link {
+  margin-top: 15px;
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #aa8851;
+}
+
+.content-panel .login-link:hover {
+  text-decoration: underline;
+}

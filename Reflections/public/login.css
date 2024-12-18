@@ -1,0 +1,115 @@
+/* General Container for the Login Page */
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://images.pexels.com/photos/589841/pexels-photo-589841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  background-size: cover;
+  font-family: "Montez", cursive; /* Consistent font */
+}
+
+/* Main Content Panel */
+.content-panel {
+  background-color: rgba(245, 235, 224, 0.9); /* Semi-transparent background */
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+ color: #aa8851; /* Text color for visibility */
+}
+
+.content-panel h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #aa8851; /* Theme color for heading */
+  margin-bottom: 20px;
+}
+
+.content-panel p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.content-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-panel form label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+ color: #aa8851;
+}
+
+.content-panel form input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+   color: #aa8851;
+}
+
+.content-panel form input:focus {
+  outline: none;
+  border: 2px solid white; /* Focus theme */
+}
+
+.content-panel .btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 20px;
+  background-color: #aa8851;
+  color: white;
+  font-size: 1em; /* Adjusted font size */
+
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Lora", serif;
+  
+  
+}
+
+.content-panel .btn:hover {
+  background-color: white;
+  color: #aa8851;
+}
+
+.content-panel .forgot-link{
+  margin-top: 15px;
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #aa8851;
+  transition: all 0.3s ease;
+}
+
+.content-panel .forgot-link:hover{
+  text-decoration: underline;
+}
+
+
+.content-panel .register-link {
+  margin-top: 15px;
+  display: inline-block; /* Makes it behave like a button */
+  text-decoration: none;
+
+  color: white;
+  background-color: #aa8851; /* Same background color as the login button */
+  padding: 12px 30px;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a button-like shadow */
+  transition: all 0.3s ease;
+}
+
+.content-panel .register-link:hover {
+  background-color: white; /* Highlight background on hover */
+  color: #aa8851; /* Text color on hover */
+  text-decoration: none; /* Ensures no underline */
+}
